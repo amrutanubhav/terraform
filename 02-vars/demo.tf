@@ -1,6 +1,11 @@
 variable "city"  {}
-variable "state" {}
+variable "state" {}  
 variable "rank" {}
+
+
+
+# even if variables are declared in the tfvars file and empty variable should be declared before using the value
+
 
 output "city name" {
 
