@@ -22,6 +22,8 @@ output "printing-demo2" {
 
 }
 
+#this is how to declare a list variable
+
 variable "example-list" {
 
  default = [
@@ -36,4 +38,23 @@ variable "example-list" {
 output "printing-list-vars" {
 
     value = "welcome to ${var.example-list[0]} ${var.example-list[1]} training, course duration is ${var.example-list[2]} hours and its ${var.example-list[3]}"
+}
+
+#this is to declare map variables
+
+variable "example-map" {
+
+ default = {
+
+    duration = 105,
+    trainer = "verma"
+    cloud = "aws"
+
+ }
+  
+}
+
+output "printing-map-vars" {
+
+    value = "welcome to ${var.example-map["cloud"]} training, course duration is ${var.example-map["duration"]} hours and its trainer is ${var.example-map["trainer"]}"
 }
