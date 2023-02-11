@@ -7,13 +7,13 @@ variable "rank" {}
 # even if variables are declared in the tfvars file and empty variable should be declared before using the value
 
 
-output "city name" {
+output "city-name" {
 
     value = "city name is ${var.city}"
 
 }
 
-output "state name" {
+output "state-name" {
 
     value = "state name is ${var.state}"
     
