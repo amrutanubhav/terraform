@@ -31,3 +31,7 @@ output "project" {
     value = "rank is ${var.project}"
     
 }
+
+
+//command line args can be passedas eg: terraform apply -auto-approve -var project=amrut
+//command line var > -var-file > *.auto.tfvars > terraform.tfvars > shell/env
