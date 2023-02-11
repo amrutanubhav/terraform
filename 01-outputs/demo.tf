@@ -16,7 +16,7 @@ output "printing-demo" {
 
 }
 
-output "printing-demo" {
+output "printing-demo2" {
   
  value = var.demo   // when only variable is asked you can set without brackets
 
