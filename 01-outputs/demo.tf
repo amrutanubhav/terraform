@@ -6,7 +6,7 @@ output "sample" {
 
 variable "demo" {
   
-  value = "devops training"
+  default = "devops training"
 
 }
 
