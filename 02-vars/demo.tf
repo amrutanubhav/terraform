@@ -24,3 +24,9 @@ output "rank" {
     value = "rank is ${var.rank}"
     
 }
+
+output "project" {
+
+    value = "rank is ${var.project}"
+    
+}
