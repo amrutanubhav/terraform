@@ -1,6 +1,7 @@
 variable "city"  {}
 variable "state" {}  
 variable "rank" {}
+variable "project" {}
 
 
 
