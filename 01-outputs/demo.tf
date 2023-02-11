@@ -33,7 +33,7 @@ variable "example-list" {
   
 }
 
-output "printing ist vars" {
+output "printing-list-vars" {
 
     value = "welcome to ${var.example-list[0]} ${var.example-list[1]} training, course duration is ${var.example-list[2]} hours and its${var.example-list[3]}"
 }
