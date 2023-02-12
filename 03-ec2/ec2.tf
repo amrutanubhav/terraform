@@ -16,4 +16,8 @@ provider "aws" {
 resource "aws_instance" "this" {
   ami                     = "ami-00e87074e52e6c9f9"
   instance_type           = "t3.micro"
+
+  tags = {
+    Name = "Test server"
+  }
 }
