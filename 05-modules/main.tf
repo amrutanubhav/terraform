@@ -10,7 +10,7 @@ source = "./sg"
 
 }
 
-ooutput "public-dns" {
+output "public-dns" {
 
   value = aws_instance.this.public_dns
   
