@@ -21,3 +21,12 @@ resource "aws_instance" "this" {
     Name = "Test server"
   }
 }
+
+#print public ip
+
+output "public-dns" {
+
+  value = aws_instance.this.public_dns
+  
+}
+
