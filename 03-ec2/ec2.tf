@@ -27,7 +27,7 @@ resource "aws_instance" "this" {
 
 resource "aws_security_group" "allow_ssh" {
   name        = "allow_ssh"
-  description = "Allow ssh,http inbound traffic"
+  description = "Allow ssh"
 
   ingress {
     description      = "ssh"
