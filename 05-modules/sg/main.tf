@@ -42,3 +42,9 @@ resource "aws_security_group" "allow_ports" {
     Name = "allow_ssh_all"
   }
 }
+
+output "sg-id" {
+
+    value = aws_security_group.allow_ports.id
+  
+}

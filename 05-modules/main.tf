@@ -1,6 +1,7 @@
 module "ec2" {
   
    source = "./ec2"
+   sg     = module.sg.sg-id 
 
 }
 
@@ -10,8 +11,8 @@ source = "./sg"
 
 }
 
-output "public-dns" {
+# output "public-dns" {
 
-  value = aws_instance.this.public_dns
+#   value = aws_instance.this.public_dns
   
-}
+# }
