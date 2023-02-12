@@ -16,21 +16,21 @@ provider "aws" {
 resource "aws_instance" "this" {
   ami                     = "ami-0c1d144c8fdd8d690" # other ami is ami-00e87074e52e6c9f9
   instance_type           = "t2.micro" # t3.medium
-  vpc_security_group_ids  = [aws_security_group.allow_ssh.id]
+  vpc_security_group_ids  = [aws_security_group.allow_ports.id]
 
   tags = {
-    Name = "Test server"
+    Name = "Terraform server"
   }
 }
 
 #security group create
 
-resource "aws_security_group" "allow_ssh" {
+resource "aws_security_group" "allow_ports" {
   name        = "allow_ssh"
-  description = "Allow ssh"
+  description = "Allow ssh inbound traffic"
 
   ingress {
-    description      = "ssh"
+    description      = "ssh from public"
     from_port        = 22
     to_port          = 22
     protocol         = "tcp"
@@ -39,9 +39,18 @@ resource "aws_security_group" "allow_ssh" {
   }
 
   ingress {
-    description      = "http"
+    description      = "http from public"
     from_port        = 80
     to_port          = 80
+    protocol         = "tcp"
+    cidr_blocks      = ["0.0.0.0/0"]
+    
+  }
+
+  ingress {
+    description      = "81 from public"
+    from_port        = 81
+    to_port          = 81
     protocol         = "tcp"
     cidr_blocks      = ["0.0.0.0/0"]
     
