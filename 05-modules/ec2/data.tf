@@ -4,3 +4,4 @@ data "aws_ami" "lab-image" {
   owners           = ["self"]
 
 }
+
