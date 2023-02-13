@@ -10,3 +10,9 @@ resource "aws_instance" "this" {
 }
 
 variable "sg" {}
+
+output "public_dns" {
+
+  value = aws_instance.this.public_dns
+  
+}
