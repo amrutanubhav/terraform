@@ -9,7 +9,7 @@ resource "aws_instance" "this" {
   count = length(var.envs) ##gives length of envs
 
   tags = {
-    Name = var.envs[count.index]
+    Name = var.envs[count.index] #count of all variables provided in envs
   }
 }
 
