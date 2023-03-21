@@ -17,7 +17,7 @@ resource "aws_instance" "this" {
         }
 
               inline = [
-                "ansible-pull -U https://github.com/amrutanubhav/ansible-amrut.git -e component=frontend -e env=dev robot-pull.yml"
+                "ansible-pull -U https://github.com/amrutanubhav/ansible-amrut.git -e component=mongodb -e env=dev robot-pull.yml"
               ]
 
  
