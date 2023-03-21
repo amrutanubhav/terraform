@@ -7,21 +7,21 @@ resource "aws_instance" "this" {
     Name = "Terraform server"
  }
 
-  provisioner "remote-exec" {
+  # provisioner "remote-exec" {
 
-        connection {
-          type     = "ssh"
-          user     = "centos"
-          password = "DevOps321"
-          host     = self.public_ip
-        }
+  #       connection {
+  #         type     = "ssh"
+  #         user     = "centos"
+  #         password = "DevOps321"
+  #         host     = self.public_ip
+  #       }
 
-              inline = [
-                "ansible-pull -U "
-              ]
+  #             inline = [
+  #               "ansible-pull -U "
+  #             ]
 
  
-  }
+  # }
 }
 variable "sg" {}
 
