@@ -3,25 +3,25 @@ resource "aws_instance" "this" {
   ami                     = data.aws_ami.image.image_id 
   instance_type           = "t2.micro" # t3.medium
   vpc_security_group_ids  = [var.sg]
-  tags = {
+  tags = { 
     Name = "Terraform server"
  }
 
-  # provisioner "remote-exec" {
+  provisioner "remote-exec" {
 
-  #       connection {
-  #         type     = "ssh"
-  #         user     = "centos"
-  #         password = "DevOps321"
-  #         host     = self.public_ip
-  #       }
+        connection {
+          type     = "ssh"
+          user     = "centos"
+          password = "DevOps321"
+          host     = self.public_ip
+        }
 
-  #             inline = [
-  #               "ansible-pull -U "
-  #             ]
+              inline = [
+                "ansible-pull -U https://github.com/amrutanubhav/ansible-amrut.git -e component=frontend -e env=dev robot-pull.yml"
+              ]
 
  
-  # }
+  }
 }
 variable "sg" {}
 
