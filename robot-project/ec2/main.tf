@@ -14,7 +14,7 @@ resource "aws_spot_instance_request" "spot_server" {
   vpc_security_group_ids  = [aws_security_group.allow_all.id]
   tags = {
     Name = "${var.component}"
-  }}
+  }
     provisioner "remote-exec" {
 
               connection {
