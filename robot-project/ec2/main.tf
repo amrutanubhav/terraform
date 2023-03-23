@@ -14,7 +14,7 @@ resource "aws_spot_instance_request" "spot_server" {
   vpc_security_group_ids  = [aws_security_group.allow_all.id]
 
   tags = {
-    Name = ${var.component}
+    Name = var.component
   }
 
   provisioner "remote-exec" {
@@ -27,7 +27,7 @@ resource "aws_spot_instance_request" "spot_server" {
         }
 
               inline = [
-                "ansible-pull -U https://github.com/amrutanubhav/ansible-amrut.git -e component=${var.component} -e env=dev -e version=${var.APP_VERSION} robot-pull.yml"
+                "ansible-pull -U https://github.com/amrutanubhav/ansible-amrut.git -e component=${var.component} -e env=dev -e version=${var.APP_VERSION} -e -e DB_PASSWORD=RoboShop@1 robot-pull.yml"
               ]
       }
 
