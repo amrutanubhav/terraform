@@ -12,7 +12,9 @@ resource "aws_spot_instance_request" "spot_server" {
   instance_type = "t3.micro"
   wait_for_fulfillment = true #job completes only if request is complete, else it will wait for 10mins and it will fail
   vpc_security_group_ids  = [aws_security_group.allow_all.id]
-
+  tags = {
+    Name = "${var.component}"
+  }}
     provisioner "remote-exec" {
 
               connection {
@@ -27,10 +29,6 @@ resource "aws_spot_instance_request" "spot_server" {
               ]
       }
 
-      
-  tags = {
-    Name = var.component
-  }
 }
   
 # variable "component" {}
