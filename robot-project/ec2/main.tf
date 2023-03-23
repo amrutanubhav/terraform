@@ -27,7 +27,7 @@ resource "aws_spot_instance_request" "spot_server" {
         }
 
               inline = [
-                "ansible-pull -U https://github.com/amrutanubhav/ansible-amrut.git -e component=frontend -e env=dev -e version=${var.APP_VERSION} robot-pull.yml"
+                "ansible-pull -U https://github.com/amrutanubhav/ansible-amrut.git -e component=${var.component} -e env=dev -e version=${var.APP_VERSION} robot-pull.yml"
               ]
       }
 
