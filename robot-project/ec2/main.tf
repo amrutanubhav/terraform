@@ -17,17 +17,17 @@ resource "aws_spot_instance_request" "spot_server" {
     Name = var.component
   }
 
-  provisioner "remote-exec" {
+    provisioner "remote-exec" {
 
-        connection {
-          type     = "ssh"
-          user     = "centos"
-          password = "DevOps321"
-          host     = self.public_ip
-        }
+              connection {
+                type     = "ssh"
+                user     = "centos"
+                password = "DevOps321"
+                host     = self.public_ip
+              }
 
               inline = [
-                "ansible-pull -U https://github.com/amrutanubhav/ansible-amrut.git -e component=${var.component} -e env=dev -e version=${var.APP_VERSION} -e -e DB_PASSWORD=RoboShop@1 robot-pull.yml"
+                "ansible-pull -U https://github.com/amrutanubhav/ansible-amrut.git -e component=${var.component} -e env=dev -e version=${var.APP_VERSION} -e DB_PASSWORD=RoboShop@1 robot-pull.yml"
               ]
       }
 
